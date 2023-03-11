@@ -72,7 +72,6 @@ if __name__ == "__main__":
     raw = requests.get(
         f"{API}/v3.0/getMobileChannelList/get/?langId=6&os=android&devicetype=phone&usertype=tvYR7NSNn7rymo3F&version=285").json()
     result = raw.get("result")
-    print("got result")
     with ThreadPoolExecutor() as e:
         e.map(genEPG, range(len(result)), result)
     epgdict = {"tv": {
