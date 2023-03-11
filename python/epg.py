@@ -17,7 +17,8 @@ done = 0
 
 def genEPG(i, c):
     global channel, programme, error, result, API, IMG, done
-    for day in range(-7, 7):
+    # for day in range(-7, 8):
+    for day in range(0, 1):
         try:
             resp = requests.get(f"{API}/v1.3/getepg/get", params={"offset": day,
                                 "channel_id": c['channel_id'], "langId": "6"}).json()
@@ -72,7 +73,7 @@ if __name__ == "__main__":
         f"{API}/v3.0/getMobileChannelList/get/?langId=6&os=android&devicetype=phone&usertype=tvYR7NSNn7rymo3F&version=285").json()
     result = raw.get("result")
     print("got result")
-    with ThreadPoolExecutor(max_workers=5) as e:
+    with ThreadPoolExecutor() as e:
         e.map(genEPG, range(len(result)), result)
     epgdict = {"tv": {
         "channel": channel,
