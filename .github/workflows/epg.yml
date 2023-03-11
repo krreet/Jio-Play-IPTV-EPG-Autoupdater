@@ -5,14 +5,14 @@ on:
   schedule:
     - cron: "30 3 * * *" # every day at 3:30am UTC (9:00am IST)
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   epg:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
@@ -24,7 +24,7 @@ jobs:
       - name: Get EPG Data
         run: python ./python/epg.py ./python/epg.xml ./python/epg.xml.gz
       - name: Commit updated epg.xml
-        run: |
-          git config --global user.name 'krreet'
-          git commit -am "Automated EPG"
-          git push
+      # Commit all changed files back to the repository
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated EPG
