@@ -18,7 +18,7 @@ done = 0
 def genEPG(i, c):
     global channel, programme, error, result, API, IMG, done
     # for day in range(-7, 8):
-    for day in range(-1, 1):
+    for day in range(0, 1):
         try:
             resp = requests.get(f"{API}/v1.3/getepg/get", params={"offset": day,
                                 "channel_id": c['channel_id'], "langId": "6"}).json()
