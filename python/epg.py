@@ -81,10 +81,10 @@ if __name__ == "__main__":
     }}
     epgxml = xmltodict.unparse(epgdict, pretty=True)
     with open(sys.argv[1], 'wb+') as f:
-        f.write(epgxml.encode('utf-8'))
-    with open(sys.argv[1], 'rb') as f_in:
-        with gzip.open(sys.argv[2], 'wb+') as f_out:
-            f_out.writelines(f_in)
+        f.write(gzip.compress(epgxml.encode('utf-8')))
+    # with open(sys.argv[1], 'rb') as f_in:
+    #     with gzip.open(sys.argv[2], 'wb+') as f_out:
+    #         f_out.write(gzip.compress(epgxml.encode('utf-8')))
     print("EPG updated", datetime.now())
     if len(error) > 0:
         print(f'error in {error}')

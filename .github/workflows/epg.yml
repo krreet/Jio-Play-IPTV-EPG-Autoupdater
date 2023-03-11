@@ -25,7 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests xmltodict
       - name: Get EPG Data
-        run: python ./python/epg.py ./python/epg.xml ./python/epg.xml.gz
+        run: python ./python/epg.py ./python/epg.xml.gz
       - name: Commit updated epg.xml
         # Commit all changed files back to the repository
         uses: stefanzweifel/git-auto-commit-action@v4
