@@ -27,6 +27,9 @@ jobs:
       - name: Get EPG Data
         run: python ./python/epg.py ./python/epg.xml.gz
       - name: Commit updated epg.xml
+      - name: Commit updated epg.xml
+        run: |
+          git pull
         # Commit all changed files back to the repository
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
