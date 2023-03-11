@@ -1,3 +1,6 @@
+
+[![EPG Service](https://github.com/krreet/Jio-Play-IPTV-EPG-Autoupdater/actions/workflows/epg.yml/badge.svg)](https://github.com/krreet/Jio-Play-IPTV-EPG-Autoupdater/actions/workflows/epg.yml)
+
 <p align="center"><img src="https://www.tataplay.com/s3-api/v1/assets/others/intro-image-desktop.png" ></p>
 
 
