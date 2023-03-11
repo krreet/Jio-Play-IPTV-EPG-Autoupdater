@@ -63,7 +63,7 @@ def genEPG(i, c):
             print(e)
             error.append(c['channel_id'])
     done += 1
-    print(f"{done*100/len(result):.2f} %", end="\r")
+    # print(f"{done*100/len(result):.2f} %", end="\r")
 
 
 if __name__ == "__main__":

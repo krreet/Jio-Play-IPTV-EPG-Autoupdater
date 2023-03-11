@@ -15,7 +15,7 @@ A script to update EPG files everyday in certain time from the Indian EPG Source
 
 # Jio Play IPTV EPG Sources Link
 
-- https://github.com/Mobassar4u/jio-play-iptv-epg-autoupdater/releases/download/latest/epg.xml.gz
+- https://cdn.jsdelivr.net/gh/krreet/epg/python/epg.xml.gz
 
 ## Features
 - Just Add Above Url In Your Playlist
