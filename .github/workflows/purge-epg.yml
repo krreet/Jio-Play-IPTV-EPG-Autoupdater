@@ -1,0 +1,17 @@
+name: Purge epg
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "10 19 * * *" # every day at 7:10pm UTC (12:40am IST)
+
+jobs:
+  epg:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: gacts/purge-jsdelivr-cache@v1
+        with:
+          url: |
+            https://cdn.jsdelivr.net/gh/krreet/epg/python/epg.xml.gz
+            https://cdn.jsdelivr.net/gh/krreet@main/epg/python/epg.xml.gz
